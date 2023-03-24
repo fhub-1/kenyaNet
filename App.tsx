@@ -1,11 +1,17 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { SafeAreaView } from "react-native";
 import MainApp from "./src/main";
+import { Provider as PaperProvider } from "react-native-paper";
+import theme from "./src/styles/theme";
+import HomeScreen from "./src/main";
 
 export default function App() {
   return (
     <>
-      <MainApp />
+      <PaperProvider theme={theme}>
+        <SafeAreaView>
+          <HomeScreen />
+        </SafeAreaView>
+      </PaperProvider>
     </>
   );
 }
